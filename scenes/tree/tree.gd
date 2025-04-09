@@ -20,11 +20,11 @@ func _ready() -> void:
 	area_node.connect("body_exited", Callable(self, "_on_body_exited"))
 	# Area2D의 신호(body_entered, body_exited)를 연결
 
-##################################################
-func _process(delta: float) -> void:
 	z_index = global_position.y
 	# 나무 오브젝트의 z_index를 y 위치로 설정 (깊이 조정)
-	
+
+##################################################
+func _process(delta: float) -> void:	
 	if is_in:
 		alpha_value = clampf(alpha_value - delta, 0.5, 1.0)
 	else:
